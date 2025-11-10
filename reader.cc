@@ -73,7 +73,9 @@ void reader_buffer(string filename, uint32_t **A, uint16_t **IA, uint16_t **JA, 
 	*IA = new uint16_t[row_size+1];
 	*JA = new uint16_t[non_zero];
 	*A = new uint32_t[non_zero];
-	
+	*IA_size = row_size+1;
+	*JA_size = non_zero;
+	*A_size = non_zero;
 
 	for (int i = 0; i < non_zero; i++) {
 		(*IA)[rc_v[i].row]++;
